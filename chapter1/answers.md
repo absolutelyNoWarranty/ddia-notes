@@ -13,7 +13,7 @@ Q:Which of the following are likely to be load parameters in a software system?
 => 4. the hit rate on a cache
 
 Q:In a batch processing system, we usually care about ____. In online systems, we usually care about the service's ____. 
-=> D: latency; response time
+=> D: throughput; response time
 
 Q:It's best to think of response time as a single number.
 => False. It's more like a distribution.(?)
@@ -34,7 +34,7 @@ Q:Vertical scaling is when we add more servers on top of each other.
 => False. Vertical scaling means you replace your current working machine to a faster one!
 
 Q:It is always better to have an elastic system.
-=> True
+=> False. Depends on your needs *(Non-elastic systems must be manually scaled but this may be easier to operate.)*
 
 Q:Systems should be designed such that operations teams can easily keep the system running.
 => True
@@ -42,8 +42,8 @@ Q:Systems should be designed such that operations teams can easily keep the syst
 Q:True or False. What are some examples of things we can do to make a system have good operability.
 => (O) provide monitoring tools to provide visibility into the runtime behavior of the system
 => (O) provide good default behavior
-=> (X) allow administrators the freedom to override defaults
-=> (O) use test-driven development
+=> (O) allow administrators the freedom to override defaults
+=> (X) use test-driven development =>  for evolvability
 => (X) try to stick to the same individual machine
 
 Q:Your system's requirements will probably never change, so it is not important to think about how to change the system.
