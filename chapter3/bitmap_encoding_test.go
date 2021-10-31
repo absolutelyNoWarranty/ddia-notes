@@ -20,7 +20,7 @@ func AssertEqualIntArr(t *testing.T, got, want []int) {
 	}
 	for i := 0; i < len(want); i++ {
 		if got[i] != want[i] {
-			t.Fatal("element", i, "got", got[i], "want", want[i])
+			t.Fatal("got", got, "want", want, "\n", "element", i, "got", got[i], "want", want[i])
 		}
 	}
 }
@@ -37,7 +37,7 @@ func AssertEqualCompressedColumn(t *testing.T, got, want []*Bitmap) {
 	}
 	for i := 0; i < len(want); i++ {
 		if got[i].Value != want[i].Value {
-			t.Fatal("element", i, "got", got[i], "want", want[i])
+			t.Fatal("got", got, "want", want, "\n", "element", i, "got", got[i], "want", want[i])
 		}
 		AssertEqualIntArr(t, got[i].RLE, want[i].RLE)
 	}
@@ -66,7 +66,7 @@ func TestBoolArrToRLE(t *testing.T) {
 		},
 		{
 			[]bool{false, false, false, false},
-			[]int{4},
+			[]int{},
 		},
 	}
 	for _, tc := range testcases {
@@ -80,7 +80,7 @@ func TestColumnCompression(t *testing.T) {
 		CompressedColumn []*Bitmap
 	}{
 		{
-			[]int{69, 69, 69, 74, 31, 31, 31, 31, 29, 30, 30, 31, 31, 31, 68, 69, 69},
+			[]int{69, 69, 69, 69, 74, 31, 31, 31, 31, 29, 30, 30, 31, 31, 31, 68, 69, 69},
 			[]*Bitmap{
 				&Bitmap{
 					Value: 29,
@@ -112,7 +112,9 @@ func TestColumnCompression(t *testing.T) {
 
 	for i, tc := range testcases {
 		t.Run(fmt.Sprintf("%d", i), func(t *testing.T) {
-			AssertEqualCompressedColumn(t, CompressColumn(tc.Column), tc.CompressedColumn)
+			got := CompressColumn(tc.Column)
+			fmt.Println(got)
+			AssertEqualCompressedColumn(t, got, tc.CompressedColumn)
 		})
 	}
 
