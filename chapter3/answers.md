@@ -8,7 +8,7 @@ Q: Storage engines fall into which two broad categories?
 => OLTP & OLAP
 
 Q: True or False. OLTP systems are typically user-facing.
-=> True. OLAP are typically for analysting data.
+=> True. OLAP are typically for analyzing data.
 
 Q: The bottleneck for OLTP systems is usually ____. The bottleneck for OLAP is usually ____. 
 => A. disk seek time; disk bandwidth
