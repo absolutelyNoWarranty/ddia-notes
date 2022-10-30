@@ -16,10 +16,10 @@ Q:In a batch processing system, we usually care about ____. In online systems, w
 => D: throughput; response time
 
 Q:It's best to think of response time as a single number.
-=> False. It's more like a distribution.(?)
+=> False. We should think of the distribution.
 
 Q:The average is not a very good metric for knowing the "typical" response time.
-=> True. 看百分位比較好去觀察整體回應速度
+=> True. It is better to use percentiles.
 
 Q:The median is also known as the 95th percentile.
 => False (50!)
