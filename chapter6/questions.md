@@ -43,4 +43,4 @@ Q: The scatter/gather approach to querying a partitioned databased is ____.
 
 Q: True or false. In practice, updates to global secondary indexes are often asynchronous.
 
-
+TODO: Partitioning Secondary Indexes by Term
