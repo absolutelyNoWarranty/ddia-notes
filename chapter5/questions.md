@@ -63,3 +63,5 @@ them in the same order. What is this guarantee called?
 3. write-then-read consistency
 4. consistent suffix reads
 
+TODO: Solutions for Replication Lag ...
+
